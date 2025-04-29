@@ -23,7 +23,7 @@ Container Basics: How to set up, configure, and work with containerized applicat
 
 <img src="https://uvads.github.io/container-basics/assets/images/docker-container.png" style="float:right;max-width:40%;" alt="Docker Container image" />
 
-## What is Source Control?
+## What is a Container?
 
 Source control, also known as "version control," is the process of tracking changes and versions of electronic files over time. This might include code, data, images, and other files. Good source control management tools allow users to see the entire history of changes to any specific file, or the evolution of an entire project. `git` is currently the most popular and feature-rich source control tool.
 
