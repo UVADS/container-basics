@@ -17,7 +17,7 @@ Git is a distributed version control system that tracks changes in any set of co
   - Create a repository locally
   - Create a repository in GitHub
   - Adding or removing collaborators
-- [**Source control basics**](docs/git-basics.md)
+- [**Source control basics**](docs/basics.md)
   - Diff
   - Status
   - Add

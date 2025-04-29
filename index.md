@@ -21,7 +21,7 @@ Container Basics: How to set up, configure, and work with containerized applicat
 
 ---
 
-<img src="https://uvads.github.io/git-basics/assets/images/git6963.jpg" style="float:right;max-width:40%;" />
+<img src="https://uvads.github.io/container-basics/assets/images/git6963.jpg" style="float:right;max-width:40%;" />
 
 ## What is Source Control?
 
