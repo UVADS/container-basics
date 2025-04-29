@@ -42,7 +42,7 @@ Data aggregation, cleaning, pipelines and ML models all rely on software in orde
 Which is to say: Code is fundamental to our work, and it would be risky, inefficient, and impractical not to use source control.
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/3N3n9FzebAA?si=UH6ibNNWgXfn25Qe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="800" height="450" src="https://www.youtube.com/embed/3N3n9FzebAA?si=UH6ibNNWgXfn25Qe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 ## Contents
