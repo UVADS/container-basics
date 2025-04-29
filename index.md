@@ -2,15 +2,15 @@
 layout: default
 title: Home
 nav_order: 1
-description: "Working with git and GitHub in Data Science."
+description: "Working with Containers in Data Science."
 permalink: /
 last_modified_date: "2025-04-24 02:13AM"
 ---
 
-# `git` in Data Science
+# Containers in Data Science
 {: .fs-9 }
 
-Source Control Basics: How to set up, configure, and work with `git` and GitHub.
+Container Basics: How to set up, configure, and work with containerized applications.
 {: .fs-6 .fw-300 }
 
 [Setting Up](docs/setup/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
