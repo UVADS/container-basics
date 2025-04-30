@@ -13,11 +13,11 @@ last_modified_date: "2025-04-24 02:13AM"
 Container Basics: How to set up, configure, and work with containerized applications.
 {: .fs-6 .fw-300 }
 
-[Setting Up](docs/setup/){: .btn .btn-green .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Basic Commands](docs/basics/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Advanced](docs/advanced/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Use Cases](docs/advanced/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Check](docs/skills-check/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Setting Up](docs/setup/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Basic Commands](docs/basics/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Advanced](docs/advanced/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Use Cases](docs/advanced/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Check](docs/skills-check/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 
