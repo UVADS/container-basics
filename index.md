@@ -14,9 +14,9 @@ Container Basics: How to set up, configure, and work with containerized applicat
 {: .fs-6 .fw-300 }
 
 [Setting Up](docs/setup/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Basic Commands](docs/basics/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Advanced](docs/advanced/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Use Cases](docs/advanced/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Basic Commands](docs/basic-commands/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Workloads](docs/workloads/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Use Cases](docs/use-cases/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Check](docs/skills-check/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
