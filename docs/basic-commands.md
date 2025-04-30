@@ -1,12 +1,12 @@
 ---
 layout: default
-title: 1 - Repositories
+title: 1 - Basic Commands
 nav_order: 3
 toc: true
 last_modified_date: "2025-04-24 02:13AM"
 ---
 
-# Creating and Managing Git Repositories
+# Basic Commands
 {: .no_toc }
 
 <details open markdown="block">

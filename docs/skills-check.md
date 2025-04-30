@@ -1,7 +1,7 @@
 ---
 layout: default
 title: 5 - Skills Check
-nav_order: 7
+nav_order: 6
 last_modified_date: "2025-04-24 02:13AM"
 ---
 

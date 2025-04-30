@@ -1,8 +1,8 @@
 ---
 layout: default
-title: SSH Authentication for GitHub
-nav_exclude: true
-# nav_order: 2
+title: 3 - Use Cases
+nav_exclude: false
+nav_order: 4
 last_modified_date: "2024-09-25 02:13AM"
 ---
 
