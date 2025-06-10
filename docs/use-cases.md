@@ -20,7 +20,10 @@ last_modified_date: "2025-06-10 02:13AM"
 
 Containers
 
-## Run a Service and Interface
+## Launch a Service and Interface
+
+Docker is also built to orchestrate the creation and management of multiple resources simultaneously, in a "stack". This way, the
+entire stack is defined in a single piece of code, and can be started or stopped together as a whole.
 
 In this use case, `docker compose` is used to launch a group of related resources to support a three-node clustser of Apache Kafka
 brokers, a Redpanda GUI to interact with the cluster, a private network across all containers in the solution, and persistent storage
@@ -162,6 +165,8 @@ You will see that a network and four (4) containers are spawned, and you can ins
 
 - Open a browser to [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to see the GUI.
 - Point any Kafka producers or consumers to `internal://0.0.0.0:9092`
+
+> **Learn More about Docker Compose** at https://docs.docker.com/compose/
 
 ## Watch how to set up SSH Keys
 
