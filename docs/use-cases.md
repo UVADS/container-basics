@@ -166,6 +166,12 @@ You will see that a network and four (4) containers are spawned, and you can ins
 - Open a browser to [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to see the GUI.
 - Point any Kafka producers or consumers to `internal://0.0.0.0:9092`
 
+To bring down the stack:
+
+```
+docker compose down
+```
+
 > **Learn More about Docker Compose** at https://docs.docker.com/compose/
 
 ## Watch how to set up SSH Keys
