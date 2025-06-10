@@ -3,10 +3,10 @@ layout: default
 title: 4 - Use Cases
 nav_exclude: false
 nav_order: 5
-last_modified_date: "2024-09-25 02:13AM"
+last_modified_date: "2025-06-10 02:13AM"
 ---
 
-# Setting up SSH Authentication for GitHub
+# Use Cases
 {: .no_toc }
 
 <details open markdown="block">
@@ -18,84 +18,150 @@ last_modified_date: "2024-09-25 02:13AM"
 {:toc}
 </details>
 
+Containers
 
-This page explains in more depth how to configure `git` to use SSH authentication, and how to clone repositories
-using that method.
+## Run a Service and Interface
 
-## 0. Create an SSH Keypair
+In this use case, `docker compose` is used to launch a group of related resources to support a three-node clustser of Apache Kafka
+brokers, a Redpanda GUI to interact with the cluster, a private network across all containers in the solution, and persistent storage
+for each of the brokers.
 
-For users who were using the `cache` credential helper for `git` before switching to the `store`
-credential helper, you may need to erase your cache.
-
-In either the Mac OSX terminal (using the `bash` shell), WSL on Windows, or any distro of Linux,
-run this command to generate your keys:
+`docker-compose.yaml`
 
 ```
-ssh-keygen
+networks:
+  redpanda_network:
+    driver: bridge
+volumes:
+  redpanda-0: null
+  redpanda-1: null
+  redpanda-2: null
+services:
+  redpanda-0:
+    command:
+      - redpanda
+      - start
+      - --kafka-addr internal://0.0.0.0:9092,external://0.0.0.0:19092
+      # Address the broker advertises to clients that connect to the Kafka API.
+      # Use the internal addresses to connect to the Redpanda brokers'
+      # from inside the same Docker network.
+      # Use the external addresses to connect to the Redpanda brokers'
+      # from outside the Docker network.
+      - --advertise-kafka-addr internal://redpanda-0:9092,external://localhost:19092
+      - --pandaproxy-addr internal://0.0.0.0:8082,external://0.0.0.0:18082
+      # Address the broker advertises to clients that connect to the HTTP Proxy.
+      - --advertise-pandaproxy-addr internal://redpanda-0:8082,external://localhost:18082
+      - --schema-registry-addr internal://0.0.0.0:8081,external://0.0.0.0:18081
+      # Redpanda brokers use the RPC API to communicate with each other internally.
+      - --rpc-addr redpanda-0:33145
+      - --advertise-rpc-addr redpanda-0:33145
+      # Mode dev-container uses well-known configuration properties for development in containers.
+      - --mode dev-container
+      # Tells Seastar (the framework Redpanda uses under the hood) to use 1 core on the system.
+      - --smp 1
+      - --default-log-level=info
+    image: docker.redpanda.com/redpandadata/redpanda:v25.1.3
+    container_name: redpanda-0
+    volumes:
+      - redpanda-0:/var/lib/redpanda/data
+    networks:
+      - redpanda_network
+    ports:
+      - 18081:18081
+      - 18082:18082
+      - 19092:19092
+      - 19644:9644
+  redpanda-1:
+    command:
+      - redpanda
+      - start
+      - --kafka-addr internal://0.0.0.0:9092,external://0.0.0.0:29092
+      - --advertise-kafka-addr internal://redpanda-1:9092,external://localhost:29092
+      - --pandaproxy-addr internal://0.0.0.0:8082,external://0.0.0.0:28082
+      - --advertise-pandaproxy-addr internal://redpanda-1:8082,external://localhost:28082
+      - --schema-registry-addr internal://0.0.0.0:8081,external://0.0.0.0:28081
+      - --rpc-addr redpanda-1:33145
+      - --advertise-rpc-addr redpanda-1:33145
+      - --mode dev-container
+      - --smp 1
+      - --default-log-level=info
+      - --seeds redpanda-0:33145
+    image: docker.redpanda.com/redpandadata/redpanda:v25.1.3
+    container_name: redpanda-1
+    volumes:
+      - redpanda-1:/var/lib/redpanda/data
+    networks:
+      - redpanda_network
+    ports:
+      - 28081:28081
+      - 28082:28082
+      - 29092:29092
+      - 29644:9644
+    depends_on:
+      - redpanda-0
+  redpanda-2:
+    command:
+      - redpanda
+      - start
+      - --kafka-addr internal://0.0.0.0:9092,external://0.0.0.0:39092
+      - --advertise-kafka-addr internal://redpanda-2:9092,external://localhost:39092
+      - --pandaproxy-addr internal://0.0.0.0:8082,external://0.0.0.0:38082
+      - --advertise-pandaproxy-addr internal://redpanda-2:8082,external://localhost:38082
+      - --schema-registry-addr internal://0.0.0.0:8081,external://0.0.0.0:38081
+      - --rpc-addr redpanda-2:33145
+      - --advertise-rpc-addr redpanda-2:33145
+      - --mode dev-container
+      - --smp 1
+      - --default-log-level=info
+      - --seeds redpanda-0:33145
+    image: docker.redpanda.com/redpandadata/redpanda:v25.1.3
+    container_name: redpanda-2
+    volumes:
+      - redpanda-2:/var/lib/redpanda/data
+    networks:
+      - redpanda_network
+    ports:
+      - 38081:38081
+      - 38082:38082
+      - 39092:39092
+      - 39644:9644
+    depends_on:
+      - redpanda-0
+  console:
+    container_name: redpanda-console
+    image: docker.redpanda.com/redpandadata/console:v3.1.0
+    networks:
+      - redpanda_network
+    entrypoint: /bin/sh
+    command: -c 'echo "$$CONSOLE_CONFIG_FILE" > /tmp/config.yml; /app/console'
+    environment:
+      CONFIG_FILEPATH: /tmp/config.yml
+      CONSOLE_CONFIG_FILE: |
+        kafka:
+          brokers: ["redpanda-0:9092"]
+        schemaRegistry:
+          enabled: true
+          urls: ["http://redpanda-0:8081"]
+        redpanda:
+          adminApi:
+            enabled: true
+            urls: ["http://redpanda-0:9644"]
+    ports:
+      - 8080:8080
+    depends_on:
+      - redpanda-0
 ```
 
-## 1. Check the permissions
-
-Your keys will typically be generated and placed in a hidden directory within your home directory named `.ssh`.
-Permissions for this directory and the keypair are usually set automatically. But if you get permission errors,
-check and verify.
-
-The `~/.ssh` directory should have `700` permissions:
+To run the stack, `cd` into the directory containing the `docker-compose.yaml` file and issue this command:
 
 ```
-chmod 700 ~/.ssh
+docker compose up -d
 ```
 
-The private key, usually named something like `id_rsa` should have `600` permissions:
+You will see that a network and four (4) containers are spawned, and you can inspect each one using regular `docker` commands.
 
-```
-chmod 600 ~/.ssh/id_rsa
-```
-
-The public key, usually ending in `.pub` should have 644 permissions:
-
-```
-chmod 644 ~/.ssh/id_rsa.pub
-```
-    
-## 2. Share your public key with GitHub
-
-Cat out the public key and copy its contents to your clipboard:
-
-```
-cat ~/.ssh/id_rsa.pub
-```
-    
-Go to your SSH key settings page in GitHub [https://github.com/settings/ssh](https://github.com/settings/ssh).
-    
-1. Press the "New SSH Key" button.
-2. Give your key a name.
-3. Keep the "Authentication Key" setting selected.
-4. Paste the contents of your public key into the "key" field.
-5. Click the "Add SSH Key" button to save and exit.
-
-> NOTE: Only distribute your PUBLIC key to GitHub, never your private key. Keep the private key confidential and do not distribute to anyone else.
-
-## 3. Use SSH keys when cloning
-
-Once the above changes are in place, you can now clone repositories by SSH address, which will look something 
-like this:
-
-```
-git clone git@github.com:ACCOUNT/REPO.git
-```
-
-If you have an existing repository that was cloned with your `$GITHUB_TOKEN` inserted into the URL, or cloned
-using SSH, and you would like to update or switch it, you can set the repository URL with this command:
-local clone with this command:
-
-```
-# Set to use HTTPS
-git remote set-url origin https://github.com/ACCOUNT/REPO.git
-
-# Set to use SSH
-git remote set-url origin git@github.com:ACCOUNT/REPO.git
-```
+- Open a browser to [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to see the GUI.
+- Point any Kafka producers or consumers to `internal://0.0.0.0:9092`
 
 ## Watch how to set up SSH Keys
 
