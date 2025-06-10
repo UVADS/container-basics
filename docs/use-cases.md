@@ -172,7 +172,8 @@ To bring down the stack:
 docker compose down
 ```
 
-> **Learn More about Docker Compose** at https://docs.docker.com/compose/
+{: .note }
+**Learn More about Docker Compose** at [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
 
 ## Watch how to set up SSH Keys
 
