@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 0 - Install & Setup
+title: 0 - Install & Setup ❌
 nav_order: 2
 last_modified_date: "2024-08-25 02:13AM"
 ---
