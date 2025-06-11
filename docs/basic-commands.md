@@ -18,6 +18,8 @@ last_modified_date: "2025-06-11 02:13AM"
 {:toc}
 </details>
 
+Below are some of the most common, foundational commands for working with containers. These assume you have Docker installed on your local workstation. However, Podman and other tools provide identical functionality.
+
 1. `docker pull`
 
     This command pulls a pre-made image from a container registry, such as Docker Hub or GHCR, etc. However, you are not required to pull an image before using it; `docker run` will pull any necessary images.
@@ -51,16 +53,44 @@ last_modified_date: "2025-06-11 02:13AM"
     ```
 
     {: .success :}
-    **About Image Tags**
-    asdflkajs flwekj fsldkfj welkjfsd lfkj welkrjsd lfksdj flkwejr lksdjf lwkerj ldkfj sdlkfjw elrkjsd flksj ejrlwkej fsldkfj lwekj sdlkfjsd fl.
+    **About Image Names:Tags**
+    Container images can be assigned names and tags when built or at any point after they exist. Container **names** can be arbitrary if you are building and running the images locally. Or, if the aim is to build a container and push it to a registry for use elsewhere, you must follow that registry's naming conventions. 
+    >
+    In the case of Docker Hub, the name should be `<account>/<image-name>:<tag>`. For other registries, prepend with the domain to the registry; for GHCR, an example might be `ghcr.io/<account-or-org>/<image-name>:<tag>`
+    >
+    **Tags** If no tag is assigned to an image you build, the assumed tag is called `latest`. However, the developer can easily manage tagging manually or using automation. Some useful tags might be a version number `1.3`, or a `dev` tag. 
 
+3. `docker tag`
 
-3. `docker run`
-4. `docker ps`
-5. `docker exec`
-6. `docker logs`
-7. `docker stop`
-8. `docker rm`
+    Find the `IMAGE ID` of a container image and you can assign it other tags. Below we pull the `nginx` container, find its ID, and assign it an additional name and tag:
+
+    ```bash
+    docker pull nginx
+    ```
+
+    Find the ID:
+
+    ```bash
+    docker images
+
+    REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
+    nginx                        latest    6784fb0834aa   8 weeks ago    281MB
+    ```
+
+    Now we name:tag as needed:
+    ```bash
+    docker tag 6784f ghcr.io/uvads/nginx:special
+    ```
+
+    {: .success :}
+    **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full image ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
+
+1. `docker run`
+2. `docker ps`
+3. `docker exec`
+4. `docker logs`
+5. `docker stop`
+6.  `docker rm`
 
 
 {: .warning :}
