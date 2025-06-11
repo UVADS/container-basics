@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 2 - Advanced Usage
+title: 2 - Advanced Usage ❌
 nav_order: 4
 toc: true
 last_modified_date: "2025-06-11 02:13AM"

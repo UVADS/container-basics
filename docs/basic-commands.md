@@ -116,7 +116,7 @@ Containers that run in detached mode are usually written with that in mind, with
 Starts the container as if it were a true TTY session.
 
 ```bash
-docker run -it ubuntu /bin/bash
+$ docker run -it ubuntu /bin/bash
 ```
 
 When running a container in interactive mode, no `ENTRYPOINT` service
@@ -125,7 +125,7 @@ or script are defined, so the user must provide one. In the example above, the `
 Any other command can be provided. Bu the session will only last as long as that command is sustained.
 
 ```bash
-docker run -it ubuntu /bin/date
+$ docker run -it ubuntu /bin/date
 ```
 - - -
 
@@ -158,7 +158,7 @@ With a known running container name or ID, run the command. `exec` is usually us
 Here we will `exec` into the `nginx` container via the `bash` shell:
 
 ```bash
-docker exec -it e74a /bin/bash
+$ docker exec -it e74a /bin/bash
 ```
 
 Think of `docker exec` as similar to `docker run -it`.
@@ -168,11 +168,11 @@ Think of `docker exec` as similar to `docker run -it`.
 If you need to observe the log output of a container, or tail it in real-time, `docker logs` is your friend:
 
 ```bash
-docker logs e74a
+$ docker logs e74a
 ```
 
 ```bash
-docker logs --follow e74a
+$ docker logs --follow e74a
 ```
 
 ## 8. `docker stop`
