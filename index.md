@@ -14,7 +14,8 @@ Container Basics: How to set up, configure, and work with containerized applicat
 {: .fs-6 .fw-300 }
 
 [Setting Up](docs/setup/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Basic Commands](docs/basic-commands/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Basic](docs/basic-commands/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Advanced](docs/advanced-commands/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Workloads](docs/workloads/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Use Cases](docs/use-cases/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Check](docs/skills-check/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 .mr-2 }
@@ -31,11 +32,10 @@ A container is a standardized, self-contained environment that packages an appli
 
 > **Docker** is a company that made the creation and use of containers easy and manageable for developers. While they did not invent the notion of the container, they popularized it with the launch of the Docker engine in 2013. Docker is a for-profit PaaS company that significantly helped standardize the container runtime.
 
+Most companies today use containers to some degree. **Google**, for example, runs all of their web platform within
+containers (which run on a container orchestration engine they wrote named Kubernetes), as well as **Instagram**,
+Uber, Netflix, Spotify, PayPal, ING, and Coca-Cola. Containers are an important part of a flexible, scalable platform, but their usefulness easily transfers to finance, backend systems, and data science.
+
 ## Containers in Data Science
 
-Data aggregation, cleaning, pipelines and ML models all rely on software in order to operate. Responsible software management depends on well-managed code, versioning, prioritizing bugs, features, and user issues. Working at scale, modern platforms and infrastructure tend to require code-driven tests, builds, deployments, and management. Code can be used to define all the layers of effort across teams of engineers and data scientists.
-
-Which is to say: Code is fundamental to our work, and it would be risky, inefficient, and impractical not to use source control.
-
-<iframe width="720" height="405" src="https://www.youtube.com/embed/3N3n9FzebAA?si=UH6ibNNWgXfn25Qe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
+Containers are incredibly useful in data science because they package an application and all its dependencies (libraries, code, runtime, system tools, etc.) into a single, isolated unit. This solves the perennial "it works on my machine" problem by ensuring that a data scientist's code, models, and analytical environments run consistently across different computing environments – from a local laptop to a cloud server. This reproducibility and portability streamline collaboration, simplify deployment of models into production, and make it easier to share research, as anyone can run the exact same environment with guaranteed results, regardless of their underlying system configuration.
