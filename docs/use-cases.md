@@ -244,7 +244,3 @@ docker compose down
 
 {: .note }
 **Learn More about Docker Compose** at [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
-
-## Watch how to set up SSH Keys
-
-[![Using SSH keys with GitHub](https://i.ytimg.com/vi/rajlGZ3w4OU/maxresdefault.jpg)](https://www.youtube.com/watch?v=rajlGZ3w4OU)
