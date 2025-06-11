@@ -37,13 +37,13 @@ Here we run a unique ID generator API on `localhost` port 8080 in detached mode.
 
 To fetch the API documentation, append `/docs` to the URL.
 
-```
+```bash
 docker run -d -p 8080:80 ghcr.io/uvarc/id-generator:1.28
 ```
 
 Access the API using a browser or the command-line, and pass the JSON through a filter like `jq`:
 
-```
+```bash
 $ curl -s http://127.0.0.1:8080/keys | jq -r
 
 {
@@ -52,7 +52,7 @@ $ curl -s http://127.0.0.1:8080/keys | jq -r
 }
 ```
 
-```
+```bash
 $ curl -s http://127.0.0.1:8080/id/14 | jq -r
 
 {
@@ -101,7 +101,7 @@ for each of the brokers.
 
 `docker-compose.yaml`
 
-```
+```yaml
 networks:
   redpanda_network:
     driver: bridge
