@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 description: "Working with Containers in Data Science."
 permalink: /
-last_modified_date: "2025-06-11 02:13AM"
+last_modified_date: "2025-06-11 02:55PM"
 ---
 
 # Containers in Data Science
@@ -33,7 +33,7 @@ A container is a standardized, self-contained environment that packages an appli
 > **Docker** is a company that made the creation and use of containers easy and manageable for developers. While they did not invent the notion of the container, they popularized it with the launch of the Docker engine in 2013. Docker is a for-profit PaaS company that significantly helped standardize the container runtime.
 
 Most companies today use containers to some degree. **Google**, for example, runs all of their web platform within
-containers (which run on a container orchestration engine they wrote named Kubernetes), as well as **Instagram**,
+containers (which run on a global container orchestration engine they wrote named Kubernetes), as well as Instagram,
 Uber, Netflix, Spotify, PayPal, ING, and Coca-Cola. Containers are an important part of a flexible, scalable platform, but their usefulness easily transfers to finance, backend systems, and data science.
 
 ## Containers in Data Science
