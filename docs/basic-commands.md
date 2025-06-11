@@ -22,114 +22,114 @@ Below are some of the most common, foundational commands for working with contai
 
 ## 1. `docker pull`
 
-    This command pulls a pre-made image from a container registry, such as Docker Hub or GHCR, etc. However, you are not required to pull an image before using it; `docker run` will pull any necessary images.
+This command pulls a pre-made image from a container registry, such as Docker Hub or GHCR, etc. However, you are not required to pull an image before using it; `docker run` will pull any necessary images.
 
-    Example:
-    ```bash
-    docker pull pytorch/pytorch
-    ```
+Example:
+```bash
+docker pull pytorch/pytorch
+```
 
-    ```bash
-    docker pull ghcr.io/uvarc/id-generator:latest
-    ```
+```bash
+docker pull ghcr.io/uvarc/id-generator:latest
+```
 
 ## 2. `docker images`
 
-    List all container images pulled to the local environment with this command. The output lists containers, in order by most-recent pull. Each container has an a name, a tag, an image ID, a created date, and its size.
+List all container images pulled to the local environment with this command. The output lists containers, in order by most-recent pull. Each container has an a name, a tag, an image ID, a created date, and its size.
 
-    ```bash
-    $ docker images
+```bash
+$ docker images
 
-    REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
-    site                         latest    b46e2764b4c9   5 hours ago    1.59GB
-    ghcr.io/uvarc/id-generator   1.28      59baec9d466f   8 months ago   1.55GB
-    pytorch/pytorch              latest    11691e035a36   5 months ago   11.70GB
-    ```
+REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
+site                         latest    b46e2764b4c9   5 hours ago    1.59GB
+ghcr.io/uvarc/id-generator   1.28      59baec9d466f   8 months ago   1.55GB
+pytorch/pytorch              latest    11691e035a36   5 months ago   11.70GB
+```
 
-    To remove an image, use the `docker rmi` command. This can also be forced with the `--force/-f` flag:
+To remove an image, use the `docker rmi` command. This can also be forced with the `--force/-f` flag:
 
-    ```bash
-    docker rmi --force 11691e035a36
-    ```
+```bash
+docker rmi --force 11691e035a36
+```
 
-    {: .success :}
-    **About Image Names:Tags**
-    Container images can be assigned names and tags when built or at any point after they exist. Container **names** can be arbitrary if you are building and running the images locally. Or, if the aim is to build a container and push it to a registry for use elsewhere, you must follow that registry's naming conventions. 
-    <br /><br />
-    In the case of Docker Hub, the name should be `<account>/<image-name>:<tag>`. For other registries, prepend with the domain to the registry; for GHCR, an example might be `ghcr.io/<account-or-org>/<image-name>:<tag>`
-    <br /><br />
-    **Tags** If no tag is assigned to an image you build, the assumed tag is called `latest`. However, the developer can easily manage tagging manually or using automation. Some useful tags might be a version number `1.3`, or a `dev` tag. 
+{: .success :}
+**About Image Names:Tags**
+Container images can be assigned names and tags when built or at any point after they exist. Container **names** can be arbitrary if you are building and running the images locally. Or, if the aim is to build a container and push it to a registry for use elsewhere, you must follow that registry's naming conventions. 
+<br /><br />
+In the case of Docker Hub, the name should be `<account>/<image-name>:<tag>`. For other registries, prepend with the domain to the registry; for GHCR, an example might be `ghcr.io/<account-or-org>/<image-name>:<tag>`
+<br /><br />
+**Tags** If no tag is assigned to an image you build, the assumed tag is called `latest`. However, the developer can easily manage tagging manually or using automation. Some useful tags might be a version number `1.3`, or a `dev` tag. 
 
 ## 3. `docker tag`
 
-    Find the `IMAGE ID` of a container image and you can assign it other tags. Below we pull the `nginx` container, find its ID, and assign it an additional name and tag:
+Find the `IMAGE ID` of a container image and you can assign it other tags. Below we pull the `nginx` container, find its ID, and assign it an additional name and tag:
 
-    ```bash
-    $ docker pull nginx
-    ```
+```bash
+$ docker pull nginx
+```
 
-    Find the ID:
+Find the ID:
 
-    ```bash
-    $ docker images
+```bash
+$ docker images
 
-    REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
-    nginx                        latest    6784fb0834aa   8 weeks ago    281MB
-    ```
+REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
+nginx                        latest    6784fb0834aa   8 weeks ago    281MB
+```
 
-    Now we `name:tag` as needed:
-    ```bash
-    $ docker tag 6784f ghcr.io/uvads/nginx:special
-    $ docker images
+Now we `name:tag` as needed:
+```bash
+$ docker tag 6784f ghcr.io/uvads/nginx:special
+$ docker images
 
-    REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
-    ghcr.io/uvads/nginx          special   6784fb0834aa   8 weeks ago    281MB
-    nginx                        latest    6784fb0834aa   8 weeks ago    281MB
-    ```
-    Notice that a new image appears in the listing, but has the same ID, same created date, and same size. Think of naming and tagging as aliases to a container ID.
+REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
+ghcr.io/uvads/nginx          special   6784fb0834aa   8 weeks ago    281MB
+nginx                        latest    6784fb0834aa   8 weeks ago    281MB
+```
+Notice that a new image appears in the listing, but has the same ID, same created date, and same size. Think of naming and tagging as aliases to a container ID.
 
-    {: .success :}
-    **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
+{: .success :}
+**Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
 
 ## 4. `docker run`
 
-    This is one of the most common commands. There are two modes to run a container in:
+This is one of the most common commands. There are two modes to run a container in:
 
-    ### A. Detached Mode
+### A. Detached Mode
 
-    Starts the container in its own separate process.
+Starts the container in its own separate process.
 
-    ```bash
-    docker run -d nginx
-    ```
+```bash
+docker run -d nginx
+```
 
-    Containers that run in detached mode are usually written with that in mind, with a default service or script set to run by default (called the `ENTRYPOINT`).
+Containers that run in detached mode are usually written with that in mind, with a default service or script set to run by default (called the `ENTRYPOINT`).
 
-    - - -
+- - -
 
-    ### B. Interactive mode
-    
-    Starts the container as if it were a true TTY session.
+### B. Interactive mode
 
-    ```bash
-    docker run -it ubuntu /bin/bash
-    ```
+Starts the container as if it were a true TTY session.
 
-    When running a container in interactive mode, no `ENTRYPOINT` service
-    or script are defined, so the user must provide one. In the example above, the `ubuntu` image will run with a `bash` prompt.
+```bash
+docker run -it ubuntu /bin/bash
+```
 
-    Any other command can be provided. Bu the session will only last as long as that command is sustained.
+When running a container in interactive mode, no `ENTRYPOINT` service
+or script are defined, so the user must provide one. In the example above, the `ubuntu` image will run with a `bash` prompt.
 
-    ```bash
-    docker run -it ubuntu /bin/date
-    ```
-    - - -
+Any other command can be provided. Bu the session will only last as long as that command is sustained.
 
-    Each mode is useful in a different way. For instance, if you are running a containerized service such as an API or database, it would be preferable to spin it up in detached mode and then use it as an endpoint to connect to.
+```bash
+docker run -it ubuntu /bin/date
+```
+- - -
 
-    However, interactive mode can be useful when the developer needs direct access to the software and environment within the container to do their work. [Devcontainers](../docs/use-cases.md) are an advanced example of this.
+Each mode is useful in a different way. For instance, if you are running a containerized service such as an API or database, it would be preferable to spin it up in detached mode and then use it as an endpoint to connect to.
 
-    You will see more examples of both modes throughout this site.
+However, interactive mode can be useful when the developer needs direct access to the software and environment within the container to do their work. [Devcontainers](../docs/use-cases.md) are an advanced example of this.
+
+You will see more examples of both modes throughout this site.
 
 ## 5. `docker ps`
 
