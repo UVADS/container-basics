@@ -133,8 +133,31 @@ You will see more examples of both modes throughout this site.
 
 ## 5. `docker ps`
 
+This command shows all running containers on the host machine, much like the Linux `ps` command. The output shows what image was used to create each container, how long it has been running, any exposed ports, and (most importantly) a container ID.
+
+```bash
+$ docker ps
+
+CONTAINER ID   IMAGE                             COMMAND                  CREATED         STATUS         PORTS                    NAMES
+e74a238ce9d3   nginx                             "/docker-entrypoint.…"   2 seconds ago   Up 42 seconds  80/tcp                   exciting_thompson
+7a28a7876a81   ghcr.io/uvarc/id-generator:1.28   "/start.sh"              23 hours ago    Up 23 hours    0.0.0.0:8080->8080/tcp   reverent_mestorf
+```
+
+Above you can see that two containers are currently running. Each has a unique CONTAINER ID and is given an arbitrary name by the Docker engine (i.e. `exciting_thompson`, `reverent_mestorf`). Use either of these handles when issuing commands against a specific container.
 
 ## 6. `docker exec`
+
+Docker `exec` enables the execution of additional commands against already-running containers. In this way the developer can run a second process on top of the process already threaded. The most common use case for this command is to "shell into" the container via a TTY session. (Many developers call this "hopping into a container" though it is not a true SSH or TTY session)
+
+With a known running container name or ID, run the command. `exec` is usually used with the `-it` flags, and the path to the desired process must be added at the end.
+
+Here we will `exec` into the `nginx` container via the `bash` shell:
+
+```bash
+docker exec -it e74a /bin/bash
+```
+
+Think of `docker exec` as similar to `docker run -it`.
 
 
 ## 7. `docker logs`
