@@ -65,13 +65,13 @@ Below are some of the most common, foundational commands for working with contai
     Find the `IMAGE ID` of a container image and you can assign it other tags. Below we pull the `nginx` container, find its ID, and assign it an additional name and tag:
 
     ```bash
-    docker pull nginx
+    $ docker pull nginx
     ```
 
     Find the ID:
 
     ```bash
-    docker images
+    $ docker images
 
     REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
     nginx                        latest    6784fb0834aa   8 weeks ago    281MB
@@ -79,9 +79,8 @@ Below are some of the most common, foundational commands for working with contai
 
     Now we `name:tag` as needed:
     ```bash
-    docker tag 6784f ghcr.io/uvads/nginx:special
-
-    docker images
+    $ docker tag 6784f ghcr.io/uvads/nginx:special
+    $ docker images
 
     REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
     ghcr.io/uvads/nginx          special   6784fb0834aa   8 weeks ago    281MB
@@ -93,6 +92,13 @@ Below are some of the most common, foundational commands for working with contai
     **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
 
 1. `docker run`
+
+    This is one of the most common commands. There are two modes to run a container in:
+
+    A. Detached mode
+    B. Interactive mode
+
+
 2. `docker ps`
 3. `docker exec`
 4. `docker logs`
