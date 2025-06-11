@@ -2,16 +2,17 @@
 layout: default
 title: 0 - Install & Setup ❌
 nav_order: 2
-last_modified_date: "2024-08-25 02:13AM"
+last_modified_date: "2025-06-11 02:13AM"
 ---
 
-# Install and Set Up Git
+# Install and Set Up Docker
+{: .no_toc }
 
 <details open markdown="block">
   <summary>
     Table of contents
   </summary>
-  {: .text-delta }
+  {: .no_toc .text-delta }
 - TOC
 {:toc}
 </details>
