@@ -56,9 +56,11 @@ docker rmi --force 11691e035a36
 **About Image Names:Tags**
 Container images can be assigned names and tags when built or at any point after they exist. Container **names** can be arbitrary if you are building and running the images locally. Or, if the aim is to build a container and push it to a registry for use elsewhere, you must follow that registry's naming conventions. 
 <br /><br />
-In the case of Docker Hub, the name should be `<account>/<image-name>:<tag>`. For other registries, prepend with the domain to the registry; for GHCR, an example might be `ghcr.io/<account-or-org>/<image-name>:<tag>`
+In the case of Docker Hub, the name should be `<account>/<image-name>:<tag>`. For other registries, prepend with the domain to the registry; for GHCR, an example might be `ghcr.io/<account-or-org>/<image-name>:<tag>`.
 <br /><br />
 **Tags** If no tag is assigned to an image you build, the assumed tag is called `latest`. However, the developer can easily manage tagging manually or using automation. Some useful tags might be a version number `1.3`, or a `dev` tag. 
+<br /><br />
+Once named and tagged properly, an image can be pushed to its respective container registry by using the `docker push` command.
 
 ## 3. `docker tag`
 
@@ -188,6 +190,17 @@ Containers, even after stopped, are still available in a cached state on the loc
 Or, if you are completely done with a container and want to clean up all traces of it, use `docker rm e74a` to destroy the container completely.
 
 {: .warning :}
-It is important to remember that when **cloning** or **forking** an existing repository.
+Remember that once deleted, a container cannot be brought back.
+
+## 10. `docker commit`
+
+After interacting with a container and customizing its contents or configuration, it can be saved as a new container image! Find the ID of the running container, and stop it. Then use this command:
+
+```bash
+docker commit 782f3 ghcr.io/<account>/<image>:<tag>
+```
+
+The new image can now be pushed to its remote registry.
+
 
 
