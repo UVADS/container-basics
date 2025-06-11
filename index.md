@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 description: "Working with Containers in Data Science."
 permalink: /
-last_modified_date: "2025-04-24 02:13AM"
+last_modified_date: "2025-06-11 02:13AM"
 ---
 
 # Containers in Data Science
@@ -25,11 +25,11 @@ Container Basics: How to set up, configure, and work with containerized applicat
 
 ## What is a Container?
 
-Source control, also known as "version control," is the process of tracking changes and versions of electronic files over time. This might include code, data, images, and other files. Good source control management tools allow users to see the entire history of changes to any specific file, or the evolution of an entire project. `git` is currently the most popular and feature-rich source control tool.
+A container is a standardized, self-contained environment that packages an application and all its dependencies, allowing it to run reliably on different systems. It's a lightweight, portable unit of software that's easy to deploy and manage. 
 
 ## What is Docker?
 
-> Git is a distributed version control system that tracks changes in any set of computer files, usually used for coordinating work among programmers who are collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows. <sup>[Wikipedia](https://en.wikipedia.org/wiki/Git)</sup>
+> **Docker** is a company that made the creation and use of containers easy and manageable for developers. While they did not invent the notion of the container, they popularized it with the launch of the Docker engine in 2013. Docker is a for-profit PaaS company that significantly helped standardize the container runtime.
 
 ## Containers in Data Science
 
@@ -39,28 +39,3 @@ Which is to say: Code is fundamental to our work, and it would be risky, ineffic
 
 <iframe width="720" height="405" src="https://www.youtube.com/embed/3N3n9FzebAA?si=UH6ibNNWgXfn25Qe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-## Contents
-
-- [**Setup**](docs/setup/)
-  - Install and set up Docker
-  - Authenticate `git` to GitHub
-  - Basic configuration
-  - Troubleshooting authentication
-- [**Creating and managing a repository**](docs/creating-repositories/)
-  - Create a repository locally
-  - Create a repository in GitHub
-  - Add or remove collaborators
-- [**Source control basics**](docs/basics/)
-  - Diff
-  - Status
-  - Add
-- [**Branches, Forks, and Merges**](docs/forks-branches/)
-  - Branches
-  - Forks
-  - Fetch from Upstream
-- [**Advanced Git/GitHub Features**](docs/advanced/)
-  - Stash
-  - Signing commits
-  - Reset and Revert
-- [**Skills Check**](docs/skills-check/)
