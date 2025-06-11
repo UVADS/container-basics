@@ -20,7 +20,7 @@ last_modified_date: "2025-06-11 02:13AM"
 
 Below are some of the most common, foundational commands for working with containers. These assume you have Docker installed on your local workstation. However, Podman and other tools provide identical functionality.
 
-1. `docker pull`
+## 1. `docker pull`
 
     This command pulls a pre-made image from a container registry, such as Docker Hub or GHCR, etc. However, you are not required to pull an image before using it; `docker run` will pull any necessary images.
 
@@ -33,7 +33,7 @@ Below are some of the most common, foundational commands for working with contai
     docker pull ghcr.io/uvarc/id-generator:latest
     ```
 
-2. `docker images`
+## 2. `docker images`
 
     List all container images pulled to the local environment with this command. The output lists containers, in order by most-recent pull. Each container has an a name, a tag, an image ID, a created date, and its size.
 
@@ -60,7 +60,7 @@ Below are some of the most common, foundational commands for working with contai
     <br /><br />
     **Tags** If no tag is assigned to an image you build, the assumed tag is called `latest`. However, the developer can easily manage tagging manually or using automation. Some useful tags might be a version number `1.3`, or a `dev` tag. 
 
-3. `docker tag`
+## 3. `docker tag`
 
     Find the `IMAGE ID` of a container image and you can assign it other tags. Below we pull the `nginx` container, find its ID, and assign it an additional name and tag:
 
@@ -91,7 +91,7 @@ Below are some of the most common, foundational commands for working with contai
     {: .success :}
     **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
 
-1. `docker run`
+## 4. `docker run`
 
     This is one of the most common commands. There are two modes to run a container in:
 
@@ -131,11 +131,18 @@ Below are some of the most common, foundational commands for working with contai
 
     You will see more examples of both modes throughout this site.
 
-2. `docker ps`
-3. `docker exec`
-4. `docker logs`
-5. `docker stop`
-6.  `docker rm`
+## 5. `docker ps`
+
+
+## 6. `docker exec`
+
+
+## 7. `docker logs`
+
+## 8. `docker stop`
+
+## 9.  `docker rm`
+ 
 
 
 {: .warning :}
