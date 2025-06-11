@@ -77,20 +77,27 @@ Below are some of the most common, foundational commands for working with contai
     nginx                        latest    6784fb0834aa   8 weeks ago    281MB
     ```
 
-    Now we name:tag as needed:
+    Now we `name:tag` as needed:
     ```bash
     docker tag 6784f ghcr.io/uvads/nginx:special
+
+    docker images
+
+    REPOSITORY                   TAG       IMAGE ID       CREATED        SIZE
+    ghcr.io/uvads/nginx          special   6784fb0834aa   8 weeks ago    281MB
+    nginx                        latest    6784fb0834aa   8 weeks ago    281MB
     ```
+    Notice that a new image appears in the listing, but has the same ID, same created date, and same size. Think of naming and tagging as aliases to a container ID.
 
     {: .success :}
     **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
 
-4. `docker run`
-5. `docker ps`
-6. `docker exec`
-7. `docker logs`
-8. `docker stop`
-9.  `docker rm`
+1. `docker run`
+2. `docker ps`
+3. `docker exec`
+4. `docker logs`
+5. `docker stop`
+6.  `docker rm`
 
 
 {: .warning :}
