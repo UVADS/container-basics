@@ -95,9 +95,41 @@ Below are some of the most common, foundational commands for working with contai
 
     This is one of the most common commands. There are two modes to run a container in:
 
-    A. Detached mode
-    B. Interactive mode
+    ### A. Detached Mode
 
+    Starts the container in its own separate process.
+
+    ```bash
+    docker run -d nginx
+    ```
+
+    Containers that run in detached mode are usually written with that in mind, with a default service or script set to run by default (called the `ENTRYPOINT`).
+
+    - - -
+
+    ### B. Interactive mode
+    
+    Starts the container as if it were a true TTY session.
+
+    ```bash
+    docker run -it ubuntu /bin/bash
+    ```
+
+    When running a container in interactive mode, no `ENTRYPOINT` service
+    or script are defined, so the user must provide one. In the example above, the `ubuntu` image will run with a `bash` prompt.
+
+    Any other command can be provided. Bu the session will only last as long as that command is sustained.
+
+    ```bash
+    docker run -it ubuntu /bin/date
+    ```
+    - - -
+
+    Each mode is useful in a different way. For instance, if you are running a containerized service such as an API or database, it would be preferable to spin it up in detached mode and then use it as an endpoint to connect to.
+
+    However, interactive mode can be useful when the developer needs direct access to the software and environment within the container to do their work. [Devcontainers](../docs/use-cases.md) are an advanced example of this.
+
+    You will see more examples of both modes throughout this site.
 
 2. `docker ps`
 3. `docker exec`
