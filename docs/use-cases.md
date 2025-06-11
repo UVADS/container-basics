@@ -18,7 +18,9 @@ last_modified_date: "2025-06-10 02:13AM"
 {:toc}
 </details>
 
-Containers
+## Devcontainers
+
+xxxxx
 
 ## Run a Script
 
@@ -57,6 +59,12 @@ $ curl -s http://127.0.0.1:8080/id/14 | jq -r
   "id": "futcxiq2fllef6"
 }
 ```
+
+## Pipeline Tasks
+
+A variety of pipeline/workflow engines allow for the use of containers to peform individual tasks within a pipeline. For example,
+Apache Airflow, Dagster, and Prefect are all container-enabled. In most scenarios, the output of a previous task serve as input
+parameters for a containerized task (i.e. file location, task parameters, task options, output type).
 
 
 ## Run a Database
