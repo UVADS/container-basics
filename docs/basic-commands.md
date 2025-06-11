@@ -90,6 +90,8 @@ Notice that a new image appears in the listing, but has the same ID, same create
 
 {: .success :}
 **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
+<br /><br />
+Be aware that you can also tab-complete any container name or ID.
 
 ## 4. `docker run`
 
@@ -159,14 +161,31 @@ docker exec -it e74a /bin/bash
 
 Think of `docker exec` as similar to `docker run -it`.
 
-
 ## 7. `docker logs`
+
+If you need to observe the log output of a container, or tail it in real-time, `docker logs` is your friend:
+
+```bash
+docker logs e74a
+```
+
+```bash
+docker logs --follow e74a
+```
 
 ## 8. `docker stop`
 
+Stop a container using this command, with the container name or ID:
+
+```bash
+docker stop e74a
+```
+
 ## 9.  `docker rm`
  
+Containers, even after stopped, are still available in a cached state on the local machine. This means that any container could be brought back using `docker start e74a`.
 
+Or, if you are completely done with a container and want to clean up all traces of it, use `docker rm e74a` to destroy the container completely.
 
 {: .warning :}
 It is important to remember that when **cloning** or **forking** an existing repository.
