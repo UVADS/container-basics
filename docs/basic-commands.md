@@ -55,9 +55,9 @@ Below are some of the most common, foundational commands for working with contai
     {: .success :}
     **About Image Names:Tags**
     Container images can be assigned names and tags when built or at any point after they exist. Container **names** can be arbitrary if you are building and running the images locally. Or, if the aim is to build a container and push it to a registry for use elsewhere, you must follow that registry's naming conventions. 
-    >
+    <br /><br />
     In the case of Docker Hub, the name should be `<account>/<image-name>:<tag>`. For other registries, prepend with the domain to the registry; for GHCR, an example might be `ghcr.io/<account-or-org>/<image-name>:<tag>`
-    >
+    <br /><br />
     **Tags** If no tag is assigned to an image you build, the assumed tag is called `latest`. However, the developer can easily manage tagging manually or using automation. Some useful tags might be a version number `1.3`, or a `dev` tag. 
 
 3. `docker tag`
@@ -83,14 +83,14 @@ Below are some of the most common, foundational commands for working with contai
     ```
 
     {: .success :}
-    **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full image ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
+    **Image and Container IDs** Notice that in all examples in this site, most all commands do not require the full ID in order to identify an image or running container. Generally the first 4-5 characters will suffice to uniquely identify your target.
 
-1. `docker run`
-2. `docker ps`
-3. `docker exec`
-4. `docker logs`
-5. `docker stop`
-6.  `docker rm`
+4. `docker run`
+5. `docker ps`
+6. `docker exec`
+7. `docker logs`
+8. `docker stop`
+9.  `docker rm`
 
 
 {: .warning :}
