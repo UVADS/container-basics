@@ -20,7 +20,7 @@ last_modified_date: "2025-06-12 02:13AM"
 
 ## Finding Images
 
-Container images are widely available, published alongside many code repositories in GitHub and elsewhere. The most common marketplace for common images is [**Docker Hub**](https://hub.docker.com/) where many common images are hosted, as well as a wide selection of [base images]().
+Container images are widely available, published alongside many code repositories in GitHub and elsewhere. The most common marketplace for common images is [**Docker Hub**](https://hub.docker.com/) where many common images are hosted, as well as a wide selection of [base images](#base-image).
 
 ## `docker build`
 
