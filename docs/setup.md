@@ -17,41 +17,7 @@ last_modified_date: "2025-06-11 02:13AM"
 {:toc}
 </details>
 
-Setting up git and authenticating yourself to GitHub is an important first step in managing and tracking your code and various projects. Follow the steps for your platform below
-
-## GUI or Command-Line?
-
-Developers should always feel empowered to select and use the tools they feel most comfortable with. There is no superiority or shame in selecting a GUI over the command-line `git` tool. Generally, most every feature is available in either.
-
-While most data scientists tend to use `git` from the command-line, many use a GUI every day.
-
-Advantanges of using a GUI for `git`:
-
-- Simple to use.
-- Handles dragging and dropping of files.
-- Visually displays changes, errors, and status.
-- Makes resolving merge conflicts much simpler.
-- [**GitHub Desktop**](https://github.com/apps/desktop) is an excellent, free choice. There are many other free and paid `git` clients available.
-
-Here is what **GitHub Desktop** looks like:
-
-![GitHub Desktop](https://images.ctfassets.net/8aevphvgewt8/5fErhOtgvjrf97d7wOoARB/b262e06c615977f33046c468147aa114/screenshot-windows-dark.png)
-
-Advantages of using the CLI version of `git`:
-
-- Fastest way to access all commands.
-- Displays only what the developer wants to see, allowing for focus.
-- Might be the only way to use `git` in a remote system (HPC cluster, cloud instances, etc.)
-
-In order to focus on specific operations and workflow steps using `git` this documentation references CLI commands only. We recommend learning those commands to get the concepts, and then learn how they are done in a GUI.
-
-## Command-Line `git`
-
-Data scientists and software developers who write code regularly *greatly* tend to use the terminal/command-line to interact with `git`. This primer assumes this and does not address various GUI tools for working with `git` and GitHub.
-
-### Installation
-
-[Download git]([docs/setup/](https://git-scm.com/downloads)){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Docker Desktop]([docs/setup/](https://www.docker.com/products/docker-desktop/)){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 <ol style="list-style-type: decimal;">
     <li>Install Git using the instructions at the following link. A git GUI version is optional, but the command line version is recommended: <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank" rel="noopener">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a>&nbsp;</li>
