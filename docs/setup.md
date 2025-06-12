@@ -44,8 +44,9 @@ Username: ******
 Password: ******
 ```
 
-### How to create a Personal Access Token (PAT) in GitHub
+## How to create a Personal Access Token (PAT) in GitHub
 
 1. Go to https://github.com/settings/tokens
 2. Generate a new PAT and grant it necessary permissions.
-3. Be sure to copy down the PAT once it is displayed on the screen; it will never be shown to you again.
+3. Expiration can be specified for a length of time. You will be notified when a PAT is about to expire.
+4. Be sure to copy down the PAT once it is displayed on the screen; it will never be shown to you again.
