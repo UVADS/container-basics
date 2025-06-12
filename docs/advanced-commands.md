@@ -125,7 +125,7 @@ Since it is possible to pass positional arguments or environment variables to a 
 
 For instance, imagine a genomic statistical script that needs to count or analyze a BED or BAM file passed to it. An input variable could be the path to the file itself, or even a URL. An output variable could specify where to write or send the output findings after completion. This might be a text file, a log file, a new row or document within a database, or a message in a Kafka topic.
 
-<a name="base-image">&nbsp;</a>
+<a id="base-image">&nbsp;</a>
 
 {: .success :}
 **What is a base image?**
