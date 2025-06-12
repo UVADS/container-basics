@@ -138,3 +138,5 @@ Since container builds are code-driven, automated build processes such as GitHub
 ## `docker compose`
 
 Docker Compose is an advanced method for running a "stack" of related containers together in a single application. The stack can be brought "up" or "down" and can communicate freely with one another by container name.
+
+ {% gist 542ee380dd0cf5a55a1cb19820c878e6 %}
