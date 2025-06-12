@@ -125,8 +125,10 @@ Since it is possible to pass positional arguments or environment variables to a 
 
 For instance, imagine a genomic statistical script that needs to count or analyze a BED or BAM file passed to it. An input variable could be the path to the file itself, or even a URL. An output variable could specify where to write or send the output findings after completion. This might be a text file, a log file, a new row or document within a database, or a message in a Kafka topic.
 
+<a name="base-image">&nbsp;</a>
+
 {: .success :}
-**What is a base image?**<a name="base-image">&nbsp;</a>
+**What is a base image?**
 In many cases, a containerized application might have a number of basic requirements to be installed alongside the application code. A language, some plugins, some configuration and settings files, an updated Operating System, etc. 
 <br /><br />
 Instead of building all of that into a container image every single time it is built, many developers use pre-built base images, and then write their newest code into in a final/second build. This speeds up the build process greatly.
