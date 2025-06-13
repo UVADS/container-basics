@@ -56,9 +56,9 @@ To provide `bash` or another basic shell for this script, we could use a base Ub
 
 In the case of Ubuntu, you will need to write a file named `Dockerfile` in the same directory as the `script.sh` file:
 
-```Dockerfile```
+`Dockerfile`
 
-```
+```bash
 FROM ubuntu:latest
 COPY script.sh script.sh
 ```
