@@ -176,7 +176,13 @@ docker run -it --rm mysql mysql -hmysql1 -uroot -p
 
 ## `docker compose`
 
-Docker Compose is an advanced method for running a "stack" of related containers together in a single application. The stack can be brought "up" or "down" and can communicate freely with one another by container name.
+Docker Compose is an advanced method for running a "stack" of related containers together in a single application. The stack can be brought "up" or "down" and can communicate freely with one another by container name. 
+
+This makes deployment and management easier:
+
+1. All resources in the stack are brought up or down as a single unit.
+2. The stack is managed in code, which can be versioned or shared with others.
+3. This makes both testing and deployment easier across a team.
 
 Review the code for this stack, and notice the resources it manages:
 
