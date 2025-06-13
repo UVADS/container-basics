@@ -23,10 +23,10 @@ last_modified_date: "2025-06-12 06:40PM"
 
 Docker Desktop is the easiest and most popular way to run Docker on your local workstation. However, there are a number of other solutions that work in nearly-identical ways:
 
-- Rancher
-- Podman
-- Colima
-- `containerd`
+- [Rancher](https://www.rancher.com/products/rancher-desktop)
+- [Podman](https://podman.io/)
+- [Colima](https://github.com/abiosoft/colima)
+- [`containerd`](https://containerd.io/)
 
 ## Configuration & Signing In
 
@@ -34,12 +34,14 @@ Most default settings are fine for Docker Desktop. In some cases you might want 
 
 You will also be asked to authenticate Docker Desktop with a free Docker account (enroll [here](https://app.docker.com/signup/)).
 
+Your command-line should already be authenticated (via the Desktop app), so you can push/pull images to Docker Hub. Note that Docker Hub limits the number of images for users in the free tier.
+
 If you intend on pushing images to a container registry other than Docker Hub, you will need to sign into that registry as well from the command-line.
 
 For example, if you want to work with GHCR, the GitHub Container Registry. Be aware that with GHCR you cannot authenticate with a password, but with a PAT (Personal Access Token) instead:
 
 ```bash
-docker login ghcr.io
+$ docker login ghcr.io
 Username: ******
 Password: ******
 ```
