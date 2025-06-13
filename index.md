@@ -27,11 +27,19 @@ Container Basics: How to set up, configure, and work with containerized applicat
 
 A container is a standardized, self-contained environment that packages an application and all its dependencies, allowing it to run reliably on different systems. It's a lightweight, portable unit of software that's easy to deploy and manage. 
 
+**What problem is a container trying to solve?** Docker was designed to solve problems around shipping software to a variety of platforms. Most developers are familiar with the "It works on my machine" problem, where they have resolved all issues around code, package, and configuration support, only to face obstacles configuring a new environment to run their app.
+
+Containers provide:
+
+- **portable environments** that run on any platform - Windows, Mac, Linux, on physical hardware or in the cloud.
+- **consistent environments** - every container run from the same image are identical
+- **efficient and isolated runtimes** - containers are lightweight compared to virtual machines, start quickly, and many can be hosted on the computer.
+
 ## What is Docker?
 
 > **Docker** is a company that made the creation and use of containers easy and manageable for developers. While they did not invent the notion of the container, they popularized it with the launch of the Docker engine in 2013. Docker is a for-profit PaaS company that significantly helped standardize the container runtime.
 
-Most companies today use containers to some degree. **Google**, for example, runs all of their web platform within
+Most companies today use containers to some degree. Google, for example, runs all of their web platform within
 containers (which run on a global container orchestration engine they wrote named Kubernetes), as well as Instagram,
 Uber, Netflix, Spotify, PayPal, ING, and Coca-Cola. Containers are an important part of a flexible, scalable platform, but their usefulness easily transfers to finance, backend systems, and data science.
 
