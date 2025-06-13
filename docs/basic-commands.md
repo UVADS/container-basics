@@ -207,7 +207,7 @@ The new image can now be pushed to its remote registry.
 In some cases it is quite useful to understand all the configuration and runtime parameters of a container. The `docker inspect` command dumps a full JSON description of these data.
 
 ```bash
-docker inspect a1b2c3d4
+docker inspect 3b65782
 ```
 
 {% gist 3d6933ec22fa402559a8c1db595e1e2f %}
