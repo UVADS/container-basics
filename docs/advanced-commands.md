@@ -18,7 +18,7 @@ last_modified_date: "2025-06-12 02:13AM"
 {:toc}
 </details>
 
-## `run` Options
+## Advanced `run` Options
 
 Three important options can extend a container's functionality at runtime:
 
@@ -34,7 +34,7 @@ To inject an environment variable into a container when you are running it, use 
 docker run -it -e MY_KEY="a1b2c3d4e5f6" ubuntu /bin/bash
 ```
 
-Within this environment you could now call `$MY_KEY` from the environment.
+Applications within this container could then call `$MY_KEY` from the environment.
 
 You can assign multiple `env` variables in this way. This is particularly useful for injecting sensitive data into the environment, such as API keys, tokens, passwords, etc.
 
