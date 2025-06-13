@@ -18,6 +18,58 @@ last_modified_date: "2025-06-12 02:13AM"
 {:toc}
 </details>
 
+## `run` Options
+
+Three important options can extend a container's functionality at runtime:
+
+1. Injecting Environment Variables
+2. Exposing Ports
+3. Mounting Persistent Storage
+
+### 1. Environment Variables
+
+To inject an environment variable into a container when you are running it, use the `-e` flag with a key-value pair:
+
+```bash
+docker run -it -e MY_KEY="a1b2c3d4e5f6" ubuntu /bin/bash
+```
+
+Within this environment you could now call `$MY_KEY` from the environment.
+
+You can assign multiple `env` variables in this way. This is particularly useful for injecting sensitive data into the environment, such as API keys, tokens, passwords, etc.
+
+It can also be used to indicate a particular mode for your application to run under, such as `dev` vs. `prod`, or to limit output during testing, etc.
+
+### 2. Exposing Ports
+
+There are many cases in which an application running on one container needs to connect to another container to make a request. This might be a database connection, an HTTP request to an API, etc.
+
+To expose the port of a service running in a container, you should provide a port mapping with the `-p` flag at runtime. The value of this flag should be a `PORT:PORT` mapping with the host machine on the left and the container port on the right of the `:`.
+
+Here is an example, exposing port `80` of the container to port `8181` of the host machine:
+
+```bash
+docker run -d -p 8181:80 nginx
+```
+
+You can also expose multiple ports at the same time, or even ranges of ports:
+
+```bash
+docker run -d -p 8050-8090:8050-8090 my_application
+```
+
+### 3. Persistent Storage Volumes
+
+One troubling fact developers encounter when working with containers is that they do not persist. That is, when you run a container and it logs its work or handles user requests, none of that data is stored beyond the lifetime of the container. Once the container dies, that data is generally lost.
+
+The solution to this problem, by design, is to allow for persistent storage from the host machine to be mapped into the container when it is run. In this way, both the host machine AND the running container share a storage path at the same time. If the container is stopped a new container can be restarted with the same mapping and all data is present.
+
+To map a persistent storage volume to a container at runtime, use the `-v` flag with a `PATH:PATH` mapping with the host machine path on the left and the container path on the right of the `:`. An example:
+
+```bash
+docker run -d -v /home/user/proj1/data:/app/data my_app
+```
+
 ## Finding Images
 
 Container images are widely available, published alongside many code repositories in GitHub and elsewhere. The most common marketplace for common images is [**Docker Hub**](https://hub.docker.com/) where many common images are hosted, as well as a wide selection of [base images](#base-image).
