@@ -85,20 +85,7 @@ Below we will write a very simple application and containerize it using `docker 
 
 `script.sh`
 
-```bash
-#!/bin/bash
-
-clear
-echo "I am the Great Adder! I will add any two numbers you give me.";
-echo "";
-read -p "What is your first number " val1;
-read -p "What is your second number " val2;
-sum=$((val1+val2));
-echo "I am thinking . . . ";
-sleep 5;
-echo "";
-echo "Your sum is $sum!!!"
-```
+{% gist 619ebe4865e61accedef6de03fc6f072 %}
 
 This is an exceedingly simple script that asks the user for two input variables and then adds them for an output. It will do for our purposes here.
 
@@ -139,27 +126,7 @@ To improve upon this example, what if we wanted the container to run the script 
 
 `script.sh` - takes positional arguments when running the script
 
-```bash
-#!/bin/bash
-
-clear
-echo "I am the Great Adder! I will add the two numbers you gave me.";
-echo "";
-sum=$(($1+$2));
-echo "I am thinking . . . ";
-sleep 2;
-echo "";
-echo "Your sum is $sum!!!"
-```
-
-`Dockerfile`
-
-```bash
-FROM ubuntu:latest
-COPY script.sh script.sh
-CMD chmod 755 script.sh
-ENTRYPOINT ["bash", "script.sh"]
-```
+{% gist aaf9281e7238b557ce5fc27a86ca60cd %}
 
 Then build it:
 
