@@ -178,4 +178,22 @@ docker run -it --rm mysql mysql -hmysql1 -uroot -p
 
 Docker Compose is an advanced method for running a "stack" of related containers together in a single application. The stack can be brought "up" or "down" and can communicate freely with one another by container name.
 
- {% gist 542ee380dd0cf5a55a1cb19820c878e6 %}
+Review the code for this stack, and notice the resources it manages:
+
+1. Two services, the `db` itself and a `phpmyadmin` interface.
+2. A new network for these services.
+3. A persistent storage volume for data.
+
+ {% gist 32b37537d505c9cef245d3cec62fe6a7 %}
+
+ To run this stack locally, first create the persistent storage directory `db_data` and open its permissions:
+
+ ```bash
+ chmod 777 db_data
+ ```
+
+ Then run the stack using `docker compose`:
+
+ ```bash
+ docker compose up -d
+ ```
