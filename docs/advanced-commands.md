@@ -58,7 +58,7 @@ In the case of Ubuntu, you will need to write a file named `Dockerfile` in the s
 
 ```Dockerfile```
 
-```bash
+```
 FROM ubuntu:latest
 COPY script.sh script.sh
 ```
@@ -136,6 +136,24 @@ Instead of building all of that into a container image every single time it is b
 ## Automated Container Builds using GitHub Actions
 
 Since container builds are code-driven, automated build processes such as GitHub Actions or Jenkins are incredibly useful to automate container image builds after a change has been committed to a repository.
+
+## Cross-container Communication
+
+Another feature built into Docker is a separate networking layer, a bridge or overlay network, that allows containers to communicate with one another by default.
+
+The easiest way to establish communications is to use the `--name` flag when running containers and to use those names as virtual endpoints in their communication.
+
+For example, a MySQL container can be run:
+
+```bash
+docker run --name mysql1 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:latest
+```
+
+And a client container can then point to that database service:
+
+```bash
+docker run -it --rm mysql mysql -hmysql1 -uroot -p
+```
 
 ## `docker compose`
 
