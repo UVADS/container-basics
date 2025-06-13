@@ -189,7 +189,7 @@ Review the code for this stack, and notice the resources it manages:
  To run this stack locally, first create the persistent storage directory `db_data` and open its permissions:
 
  ```bash
- chmod 777 db_data
+ mkdir db_data && chmod 777 db_data
  ```
 
  Then run the stack using `docker compose`:
@@ -197,3 +197,7 @@ Review the code for this stack, and notice the resources it manages:
  ```bash
  docker compose up -d
  ```
+
+ Notice the `-d` flag to run in "detached" mode. This launches the stack into a separate thread. To watch the logs of either container, find its ID and use `docker logs --follow <ID>`.
+
+ Alternatively, omit the `-d` flag and you will see the log output in realtime.

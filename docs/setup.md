@@ -19,7 +19,7 @@ last_modified_date: "2025-06-12 06:40PM"
 
 ## Installation
 
-[Docker Desktop]([docs/setup/](https://www.docker.com/products/docker-desktop/)){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Docker Desktop]([https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 Docker Desktop is the easiest and most popular way to run Docker on your local workstation. However, there are a number of other solutions that work in nearly-identical ways:
 
