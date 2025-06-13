@@ -186,9 +186,9 @@ This makes deployment and management easier:
 
 Review the code for this stack, and notice the resources it manages:
 
-1. Two services, the `db` itself and a `phpmyadmin` interface.
-2. A new network for these services.
-3. A persistent storage volume for data.
+- Two services, the `db` itself and a `phpmyadmin` interface.
+- A new network for these services.
+- A persistent storage volume for data.
 
  {% gist 32b37537d505c9cef245d3cec62fe6a7 %}
 
