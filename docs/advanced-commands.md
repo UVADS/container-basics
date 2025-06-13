@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 2 - Advanced Usage ❌
+title: 2 - Advanced Usage
 nav_order: 4
 toc: true
 last_modified_date: "2025-06-12 02:13AM"
@@ -38,7 +38,7 @@ Applications within this container could then call `$MY_KEY` from the environmen
 
 You can assign multiple `env` variables in this way. This is particularly useful for injecting sensitive data into the environment, such as API keys, tokens, passwords, etc.
 
-It can also be used to indicate a particular mode for your application to run under, such as `dev` vs. `prod`, or to limit output during testing, etc.
+It can also be used to provide a database connection to a container, or indicate a particular mode for your application to run under, such as `dev` vs. `prod`, or to limit output during testing, etc.
 
 ### 2. Exposing Ports
 
