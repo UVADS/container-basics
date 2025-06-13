@@ -124,7 +124,7 @@ You should be prompted to input two numbers, and then the script gives the expec
 
 To improve upon this example, what if we wanted the container to run the script automatically without specifying a script path? And what if we did not want the script to be interactive, but input variables at runtime? Let's rewrite the script a bit:
 
-`script.sh` - takes positional arguments when running the script
+`script.sh` - takes positional arguments when running the script.
 
 {% gist aaf9281e7238b557ce5fc27a86ca60cd %}
 
