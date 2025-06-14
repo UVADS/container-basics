@@ -22,7 +22,13 @@ last_modified_date: "2025-06-10 02:13AM"
 
 A common issue in software development is working with a consistent environment with all dependencies. In Python development this usually means a specific version of the language, as well as numerous packages or libraries.
 
-Devcontainers solve this challenge by integrating a container with a coding IDE, such as Visual Studio Code, Cursor, GitHub Codespaces, etc.
+Devcontainers solve this challenge by integrating a container with a coding IDE:
+
+- [Visual Studio Code](https://code.visualstudio.com/docs/devcontainers/create-dev-container)
+- [Cursor](https://www.cursor.com/)
+- [GitHub Codespaces](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/introduction-to-dev-containers)
+
+![Devcontainer in VS code](https://code.visualstudio.com/assets/docs/devcontainers/create-dev-container/connected-to-dev-container.png)
 
 See [**this repository**](https://github.com/UVADS/learning-environments?tab=readme-ov-file#1-vscode-devcontainers) for more examples and instructions.
 
