@@ -20,11 +20,18 @@ last_modified_date: "2025-06-10 02:13AM"
 
 ## Devcontainers
 
-xxxxx
+A common issue in software development is working with a consistent environment with all dependencies. In Python development this usually means a specific version of the language, as well as numerous packages or libraries.
+
+Devcontainers solve this challenge by integrating a container with a coding IDE, such as Visual Studio Code, Cursor, GitHub Codespaces, etc.
+
+See [**this repository**](https://github.com/UVADS/learning-environments?tab=readme-ov-file#1-vscode-devcontainers) for more examples and instructions.
+
+{: .note }
+**Learn More about Devcontainers** at [https://containers.dev/](https://containers.dev/s)
 
 ## Run a Script
 
-One of the simplest use cases for a container is to run some process, or chain of updates or transformations against a data file.
+One of the simplest use cases for containers is to run a process, or chain of updates or transformations against a data file.
 
 In this example 
 
