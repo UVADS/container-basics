@@ -22,7 +22,7 @@ last_modified_date: "2025-06-10 02:13AM"
 
 A common issue in software development is working with a consistent environment with all dependencies. In Python development this usually means a specific version of the language, as well as numerous packages or libraries.
 
-Devcontainers solve this challenge by integrating a container with a coding IDE. The IDE provides a strong graphical interface, support for extensions and plugins, and syntax highlighting, while the container provides a consistent environment re: language, packages, and `env` variables, etc.:
+Devcontainers solve this challenge by integrating a container with a coding IDE. The IDE provides a strong graphical interface, support for extensions and plugins, and syntax highlighting, while the container provides a consistent environment re: software, paths, language, packages, and `env` variables, etc.:
 
 - [Visual Studio Code](https://code.visualstudio.com/docs/devcontainers/create-dev-container)
 - [Cursor](https://www.cursor.com/)
