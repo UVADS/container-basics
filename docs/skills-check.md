@@ -2,7 +2,7 @@
 layout: default
 title: 4 - Skills Check
 nav_order: 5
-last_modified_date: "2025-06-11 02:13AM"
+last_modified_date: "2025-01-09 02:13AM"
 ---
 
 # Skills Check
@@ -39,6 +39,7 @@ errors or issues from within the container.
 1. Be familiar with port mapping between a running container and its local host machine.
 2. Be familiar with volume mapping between a running container and its local host machine.
 3. Write a `Dockerfile` and build your own code into a container image.
+4. Know how to view resource consumption by any one of your running containers.
 
 ## Proficient
 
