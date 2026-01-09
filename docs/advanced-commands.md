@@ -190,12 +190,10 @@ push them along with a multi-arch manifest. Examples of this can be seen in the 
 
 Since container builds are code-driven, automated build processes such as GitHub Actions or Jenkins are incredibly useful to automate container image builds after a change has been committed to a repository.
 
-In the example below, 
-
-The following file is placed in `.github/workflows/build.yml`. The presence of any valid YAML file in this location triggers
-an action to execute based on the parameters on lines 3-5 (in this case, any `push` to the `main` branch). Actions then run a series
-of jobs either in succession or in parallel, and some jobs (or other actions) can run depending upon the outcome or success/failure
-of other jobs/actions. Some key elements of this action file:
+The following file would be found in `.github/workflows/build.yml`. The presence of any valid YAML file in this path within a repository
+triggers an action to execute based on the parameters on lines 3-5 (in this case, any `push` to the `main` branch). Actions then run 
+a series of jobs either in succession or in parallel, and some jobs (or other actions) can run depending upon the outcome or 
+success/failure of other jobs/actions. Some key elements of this action file are:
 
 - On line 17 it checks out a copy of the repository code.
 - On line 26 it logs into the GitHub Container registry using account secrets.
