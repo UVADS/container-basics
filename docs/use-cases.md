@@ -136,8 +136,8 @@ docker compose down
 {: .note }
 **Learn More about Docker Compose** at [https://docs.docker.com/compose/](https://docs.docker.com/compose/)
 
-
-https://labs.play-with-docker.com/
+{: .success }
+**Play with Docker** at [https://labs.play-with-docker.com/](https://labs.play-with-docker.com/)
 
 
 ## AWS Lambda
