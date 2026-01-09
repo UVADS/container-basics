@@ -3,7 +3,7 @@ layout: default
 title: 3 - Use Cases
 nav_exclude: false
 nav_order: 4
-last_modified_date: "2025-06-10 02:13AM"
+last_modified_date: "2026-01-09 02:13AM"
 ---
 
 # Use Cases
@@ -138,3 +138,16 @@ docker compose down
 
 
 https://labs.play-with-docker.com/
+
+
+## AWS Lambda
+
+Lambda functions in AWS have typically run language-specific functions on demand, but since 2020 users have been able to bring
+their own containers instead. This allows developers to run a custom solution, older versions of software, shell scripts,
+and other unique software that requires a customized environment.
+
+Container images in AWS Lambda  may be up to 10GB in size, and will use most of the normal runtime parameters as
+a normal Lambda function: Both the `event` and `context` are passed to the container, as are environment variables,
+memory and CPU allocation, and execution duration.
+
+For more about AWS Lambda BYOC [refer to this documentation](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html).

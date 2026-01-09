@@ -54,3 +54,5 @@ errors or issues from within the container.
 2. Know how to communicate across containers. For instance, if an API container needs to connect
 to a containerized database service, what address does it use?
 3. Set up automated container builds as part of a GitHub Action.
+4. Run a custom container as an AWS Lambda function.
+
