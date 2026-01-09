@@ -3,7 +3,7 @@ layout: default
 title: 2 - Advanced Usage
 nav_order: 4
 toc: true
-last_modified_date: "2025-06-12 02:13AM"
+last_modified_date: "2026-01-09 02:13AM"
 ---
 
 # Advanced Usage
@@ -151,6 +151,24 @@ For instance, imagine a genomic statistical script that needs to count or analyz
 In many cases, a containerized application might have a number of basic requirements to be installed alongside the application code. A language, some plugins, some configuration and settings files, an updated Operating System, etc. 
 <br /><br />
 Instead of building all of that into a container image every single time it is built, many developers use pre-built base images, and then write their newest code into in a final/second build. This speeds up the build process greatly.
+
+## Platform Architecture & Multi-Arch Builds
+
+Docker supports building images for multiple processor architectures. The two most common are `amd64` and `arm64`.
+
+**amd64** (also called x86-64 or AMD64) is the 64-bit x86 architecture used by most desktop and laptop computers 
+with Intel or AMD processors, as well as traditional cloud servers like standard AWS EC2, Google Cloud, and Azure instances.
+
+**arm64** (also called AArch64) is the 64-bit ARM architecture known for power efficiency. You'll find it in Apple 
+Silicon Macs (M1/M2/M3/M4), AWS Graviton instances, Raspberry Pi devices, and newer cloud instances optimized for cost and efficiency.
+
+Why Multi-Arch Matters
+
+If you build a Docker image only for amd64, it won't run natively on ARM-based systems and vice versa. While Docker 
+Desktop can emulate different architectures, emulation is significantly slower than native execution. Building 
+multi-arch images ensures your containers run efficiently regardless of the underlying hardware, which matters 
+when developing on Apple Silicon Macs but deploying to traditional amd64-based AWS instances or experimenting 
+with ARM-based Graviton instances.
 
 ## Automated Container Builds using GitHub Actions
 

@@ -2,7 +2,7 @@
 layout: default
 title: 4 - Skills Check
 nav_order: 5
-last_modified_date: "2025-01-09 02:13AM"
+last_modified_date: "2026-01-09 02:13AM"
 ---
 
 # Skills Check
@@ -39,12 +39,14 @@ errors or issues from within the container.
 1. Be familiar with port mapping between a running container and its local host machine.
 2. Be familiar with volume mapping between a running container and its local host machine.
 3. Write a `Dockerfile` and build your own code into a container image.
-4. Know how to view resource consumption by any one of your running containers.
+4. Know how to view resource consumption for a running container.
+5. Undertand how to inspect every parameter for a running container: its image, networking, `env` variables, etc.
 
 ## Proficient
 
 1. Understand ways to build small, or "slim," container images.
 2. Know how to follow the output log of a running container.
+3. Explain what multi-arch container images are and why they exist.
 
 ## Expert
 
