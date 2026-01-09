@@ -146,6 +146,9 @@ callouts:
   important:
     title: Important
     color: blue
+  more:
+    title: More
+    color: green
   success:
     title: More
     color: green

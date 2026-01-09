@@ -152,3 +152,7 @@ a normal Lambda function: Both the `event` and `context` are passed to the conta
 memory and CPU allocation, and execution duration.
 
 For more about AWS Lambda BYOC [refer to this documentation](https://docs.aws.amazon.com/lambda/latest/dg/images-create.html).
+
+{: .note }
+**Google Cloud Platform** - in GCP you can bring your own containers to **Cloud Run**, which brings together the former
+Cloud Functions and Cloud Run services under one service. [Learn more](https://docs.cloud.google.com/run/docs/building/functions).
