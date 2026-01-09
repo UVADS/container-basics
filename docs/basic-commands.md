@@ -3,7 +3,7 @@ layout: default
 title: 1 - Basic Commands
 nav_order: 3
 toc: true
-last_modified_date: "2025-06-11 02:13AM"
+last_modified_date: "2026-01-09 01:10PM"
 ---
 
 # Basic Commands
@@ -202,7 +202,20 @@ docker commit 782f3 ghcr.io/<account>/<image>:<tag>
 
 The new image can now be pushed to its remote registry.
 
-## 11. `docker inspect`
+## 11. `docker stats`
+
+Assuming any number of containers is running, you can display their resource consumption in a convenient list
+using the `docker stats` command:
+
+```
+CONTAINER ID   NAME         CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O         PIDS 
+6bc6a3d4beb7   ollama       0.00%     190MiB / 9.705GiB     1.91%     2.11GB / 25.2MB   34.5MB / 0B       24 
+196bd3cef049   open-webui   3.10%     859.4MiB / 9.705GiB   8.65%     945MB / 26.3MB    35.9MB / 58.7MB   27 
+```
+
+Press ctrl+C to exit the view.
+
+## 12. `docker inspect`
 
 In some cases it is quite useful to understand all the configuration and runtime parameters of a container. The `docker inspect` command dumps a full JSON description of these data.
 
