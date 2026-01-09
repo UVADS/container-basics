@@ -125,7 +125,8 @@ docker compose up -d
 You will see that a network and four (4) containers are spawned, and you can inspect each one using regular `docker` commands.
 
 - Open a browser to [http://127.0.0.1:8080/](http://127.0.0.1:8080/) to see the GUI.
-- Point any Kafka producers or consumers to `internal://0.0.0.0:9092`
+- Point any Kafka producers or consumers to `internal://0.0.0.0:9092` (other containers) or `external://0.0.0.0:19092` (other
+processes on the host machine).
 
 To bring down the stack:
 
