@@ -162,13 +162,29 @@ with Intel or AMD processors, as well as traditional cloud servers like standard
 **arm64** (also called AArch64) is the 64-bit ARM architecture known for power efficiency. You'll find it in Apple 
 Silicon Macs (M1/M2/M3/M4), AWS Graviton instances, Raspberry Pi devices, and newer cloud instances optimized for cost and efficiency.
 
-Why Multi-Arch Matters
+**Why Multi-Arch Matters**
 
 If you build a Docker image only for amd64, it won't run natively on ARM-based systems and vice versa. While Docker 
 Desktop can emulate different architectures, emulation is significantly slower than native execution. Building 
 multi-arch images ensures your containers run efficiently regardless of the underlying hardware, which matters 
 when developing on Apple Silicon Macs but deploying to traditional amd64-based AWS instances or experimenting 
 with ARM-based Graviton instances.
+
+**How to Build Multi-Arch Images**
+
+There are two primary common ways to build for multiple architectures: Locally and using CI/CD Tools
+
+1. Locally - The most straightforward approach is using Docker Buildx, which comes bundled with modern Docker installations. 
+First, create a new builder instance with `docker buildx create --use`, then build and push your multi-arch image with a single 
+command: `docker buildx build --platform linux/amd64,linux/arm64 -t yourusername/yourimage:latest --push .` This command builds 
+your image for both `x86_64` and ARM architectures simultaneously and pushes them to your registry as a multi-arch manifest. 
+Docker automatically pulls the correct architecture variant when users run your image on their specific platform. For more 
+complex scenarios, you can use architecture-specific build arguments or conditionals in your Dockerfile using `ARG TARGETARCH` 
+to customize the build process per architecture.
+
+2. CI/CD Tools - Automated build tools like GitHub Actions can also perform multi-arch builds as part of every build process.
+These workflows authenticate to your preferred container registry, build the image in the architectures you specify, then
+push them along with a multi-arch manifest. Examples of this can be seen in the following section.
 
 ## Automated Container Builds using GitHub Actions
 
